@@ -69,15 +69,15 @@
 
 $(document).ready(()=>{
 
-$('#Login').on("click",()=>{
- 
+$('#Login').on("click",(e)=>{
+ e.preventDSefault();
  let fname=$('#fname').val();
  let lname=$('#lname').val();
  let empid=$('#empid').val();
  
  let agent={FirstName:fname,LastName : lname, EmpID : empid};
- 
- console.log(agent);
+ $.cookie('Agent',agent,{expires:1,path:'/'});
+ console.log($.cookie());
  
 });
 
