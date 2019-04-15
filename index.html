@@ -80,8 +80,15 @@ $('#Login').on("click",(e)=>{
     $.cookie('EmpID',empid,{expires:1,path:'/'});
  
     console.log($.cookie());
+    Reset();
  
 });
+    
+    let Reset= ()=>{
+        $('#fname').val('');
+        $('#lname').val('');
+        $('#empid').val('');
+    };
 
 });
 
