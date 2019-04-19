@@ -87,9 +87,9 @@ $('#Submit').on("click",(e)=>{
     $('#txtarea2').val(value);
   });
     $('#logout').on("click",()=>{
-      $.cookie('FirstName',null);
-      $.cookie('LastName',null);
-      $.cookie('EmpID',null);
+      $.cookie('FirstName','');
+      $.cookie('LastName','');
+      $.cookie('EmpID','');
       window.location.href='index.html';
 });
 
