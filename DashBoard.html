@@ -72,7 +72,7 @@
 $(document).ready(()=>{ 
     if($.cookie('FirstName')===null)
         window.location.href="index.html";
-    $('#name').append($.cookie('FirstName'));
+    $('#name').append('Hi '+$.cookie('FirstName'));
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
