@@ -63,6 +63,7 @@
 
 <div class="col-md-7">
   <br/><br/>
+    <button class="btn btn-default" id="logout">Log Out<button>
 <textarea class="form-control" rows="20" cols="60" id="txtarea2"></textarea>
 </div>
 </div>
@@ -72,6 +73,7 @@
 $(document).ready(()=>{
     if($.cookie('FirstName')===null)
         window.location.href='index.html';
+    
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
@@ -85,7 +87,12 @@ $('#Submit').on("click",(e)=>{
     
     $('#txtarea2').val(value);
   });
-
+    $('#logout').on("click",()=>{
+      $.cookie('FirstName',null);
+      $.cookie('LastName',null);
+      $.cookie('EmpID',null);
+      window.location.href='index.html';
+});
 
 });
 </script>
