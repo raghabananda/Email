@@ -86,10 +86,10 @@ $('#Submit').on("click",(e)=>{
     
     $('#txtarea2').val(value);
   });
-    $('#logout').on("click",()=>{
-      $.cookie('FirstName','');
-      $.cookie('LastName','');
-      $.cookie('EmpID','');
+    $('#logout').on("click",()=>{        
+      $.cookie('FirstName','',{expires:1,path:'/'});
+      $.cookie('LastName','',{expires:1,path:'/'});
+      $.cookie('EmpID','',{expires:1,path:'/'});
       window.location.href='index.html';
 });
 
