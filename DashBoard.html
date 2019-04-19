@@ -70,6 +70,8 @@
 
 <script>
 $(document).ready(()=>{ 
+    if($.cookie('FirstName')===null)
+        window.location.href="index.html";
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
