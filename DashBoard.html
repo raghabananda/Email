@@ -69,10 +69,7 @@
 </div>
 
 <script>
-$(document).ready(()=>{
-    if($.cookie('FirstName')===null)
-        window.location.href='index.html';
-    
+$(document).ready(()=>{ 
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
