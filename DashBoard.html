@@ -90,14 +90,10 @@ $('#Submit').on("click",(e)=>{
     $('#txtareatag1').val(tagging);
     $('#Tag').val(tag);
   });
-    $('#logout').on("click",()=>{ 
-        $.cookie('FirstName',null,{expires:1,path:'/'});
-        $.cookie('LastName',null,{expires:1,path:'/'});
-        $.cookie('EmpID',null,{expires:1,path:'/'});
-        
-      //$.removeCookie('FirstName');
-      //$.removeCookie('LastName');
-      //$.removeCookie('EmpID');
+    $('#logout').on("click",()=>{                
+      $.removeCookie('FirstName',{path: '/'});
+      $.removeCookie('LastName',{path: '/'});
+      $.removeCookie('EmpID',{path: '/'});
       window.location.href='index.html';
 });
 
