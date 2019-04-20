@@ -91,9 +91,9 @@ $('#Submit').on("click",(e)=>{
     $('#Tag').val(tag);
   });
     $('#logout').on("click",()=>{                
-      $.removeCookie('FirstName',{path: '/',domain:"https://raghabananda.github.io/Email/"});
-      $.removeCookie('LastName',{path: '/',domain:"https://raghabananda.github.io/Email/"});
-      $.removeCookie('EmpID',{path: '/',domain:"https://raghabananda.github.io/Email/"});
+      $.removeCookie('FirstName',{path: '/'});
+      $.removeCookie('LastName',{path: '/'});
+      $.removeCookie('EmpID',{path: '/'});
       window.location.href='index.html';
 });
 
