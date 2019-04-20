@@ -73,7 +73,7 @@
 $(document).ready(()=>{ 
     console.log($.cookie().FirstName);
       
-    $('#name').append('Hi '+$.cookie('FirstName'));
+    $('#name').append('Hi '+$.cookie().FirstName);
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
