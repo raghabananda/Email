@@ -75,9 +75,9 @@ $('#Login').on("click",(e)=>{
  let lname=$('#lname').val();
  let empid=$('#empid').val();
  
-    $.cookie('FirstName',fname,{expires:1,path:'/',domain:"https://raghabananda.github.io/Email/"});
-    $.cookie('LastName',lname,{expires:1,path:'/',domain:"https://raghabananda.github.io/Email/"});
-    $.cookie('EmpID',empid,{expires:1,path:'/',domain:"https://raghabananda.github.io/Email/"});
+    $.cookie('FirstName',fname,{expires:1,path:'/'});
+    $.cookie('LastName',lname,{expires:1,path:'/'});
+    $.cookie('EmpID',empid,{expires:1,path:'/'});
  
     console.log($.cookie());
     window.location.href="DashBoard.html";
