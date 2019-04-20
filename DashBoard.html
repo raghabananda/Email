@@ -71,8 +71,8 @@
 
 <script>
 $(document).ready(()=>{ 
-    if($.cookie('FirstName')===null)
-        window.location.href="index.html";
+    console.log($.cookie());
+      
     $('#name').append('Hi '+$.cookie('FirstName'));
 $('#Submit').on("click",(e)=>{
     e.preventDefault();
