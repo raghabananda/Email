@@ -91,9 +91,9 @@ $('#Submit').on("click",(e)=>{
     $('#Tag').val(tag);
   });
     $('#logout').on("click",()=>{ 
-        $.cookie('FirstName','');
-        $.cookie('LastName','');
-        $.cookie('EmpID','');
+        $.cookie('FirstName',null,{expires:1,path:'/'});
+        $.cookie('LastName',null,{expires:1,path:'/'});
+        $.cookie('EmpID',null,{expires:1,path:'/'});
         
       //$.removeCookie('FirstName');
       //$.removeCookie('LastName');
