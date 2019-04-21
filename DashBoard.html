@@ -110,8 +110,10 @@ $(document).ready(()=>{
       $.removeCookie('FirstName',{path: '/'});
       $.removeCookie('LastName',{path: '/'});
       $.removeCookie('EmpID',{path: '/'});
-      window.location.href='/Email/';
-        
+      window.location.href='/Email/';      
+    });
+    
+      
         //Reset the fields
         $('#reset').on("click",(e)=>{
             e.preventDefault();
@@ -126,7 +128,6 @@ $(document).ready(()=>{
             $('#txtarea2').val('');
         };
         
-});
 
 });
 </script>
