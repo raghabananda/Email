@@ -5,8 +5,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script>
         $(window).on("load",()=>{
-        if(!$.cookie().FirstName.length>0)
-         window.location.href='/Email/';
+            console.log($.cookie().FirstName.length);
+        //if(!$.cookie().FirstName.length>0)
+         //window.location.href='/Email/';
         });
     </script>
 </head>
