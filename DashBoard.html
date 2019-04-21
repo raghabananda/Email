@@ -113,7 +113,8 @@ $(document).ready(()=>{
       window.location.href='/Email/';
         
         //Reset the fields
-        $('#reset').on("click",()=>{
+        $('#reset').on("click",(e)=>{
+            e.preventDefault();
             $('#lname').val('');
             $('#ref').val('');
             $('#Tag').val('');
