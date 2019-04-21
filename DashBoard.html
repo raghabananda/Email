@@ -85,10 +85,10 @@
 
 <script>
 $(document).ready(()=>{ 
-   // console.log($.cookie().FirstName);
-     
+  
+     //Submit event
     $('#name').append('Hi '+$.cookie().FirstName);
-$('#Submit').on("click",(e)=>{
+    $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
     let lname=$('#lname').val();
@@ -104,11 +104,24 @@ $('#Submit').on("click",(e)=>{
     $('#txtareatag1').val(tagging);
     $('#Tag').val(tag);
   });
+    
+    //Log Out
     $('#logout').on("click",()=>{                
       $.removeCookie('FirstName',{path: '/'});
       $.removeCookie('LastName',{path: '/'});
       $.removeCookie('EmpID',{path: '/'});
       window.location.href='/Email/';
+        
+        //Reset the fields
+        $('#reset').on("click",()=>{
+            $('#lname').val('');
+            $('#ref').val('');
+            $('#Tag').val('');
+            $('#txtarea1').val('');
+            $('#txtareatag1').val('');
+            $('#txtarea2').val('');
+        });
+        
 });
 
 });
