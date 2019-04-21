@@ -5,7 +5,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script>
         $(window).on("load",()=>{
-            console.log($.cookie().FirstName.length);
+            try{
+                console.log($.cookie().FirstName.length);
+            }
+            catch(error){
+               window.location.href='/Email/';
+            }
+            
         //if(!$.cookie().FirstName.length>0)
          //window.location.href='/Email/';
         });
