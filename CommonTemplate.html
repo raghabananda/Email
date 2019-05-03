@@ -25,6 +25,12 @@
       <li class="nav-item">      
          <a class="nav-link" href="#" id="name"></a>
     </li>
+      <li class="nav-item">      
+         <input type="text" class="nav-link form-control" id="lname">
+    </li>
+      <li class="nav-item">      
+         <input type="text" class="nav-link form-control" id="ref">
+    </li>
     <li class="nav-item">      
          <a class="nav-link" href="#" id="logout">Log Out</a>
     </li>
@@ -37,7 +43,7 @@
 <div class="col-md-4">
 <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#">Incomplete</a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="Incomplete">Incomplete</a>
     </li>
     <li class="nav-item">
       <a class="nav-link btn btn-success mb-1" href="#">Link</a>
@@ -59,6 +65,14 @@
 
 </div>
  </div>
-
+<script>
+$(document).ready(()=>{
+    $('#name').append('Hi '+$.cookie().FirstName);
+   $('#Incomplete').on("click",()=>{
+     $('#Tag').val();
+   });
+    
+});    
+</script>
 </body>
 </html>
