@@ -49,7 +49,7 @@
       <a class="nav-link btn btn-success mb-1" href="#" id="ServiceCenter">ServiceCenter</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="NewInstallation">New Installation</a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="NewInstallation">New Installation</a>
     </li>
     <li class="nav-item">
       <a class="nav-link btn btn-success mb-1" href="#">Link</a>
@@ -119,8 +119,20 @@ $(document).ready(()=>{
     
     $('#NewInstallation').on("click",(e)=>{
        e.preventDefault();
-      console.log(Tags.NewInstallation);
-    });
+      let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! \n\n`+Tags.NewInstallation+`\n\nThe service request no is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+   });
 });    
 </script>
 </body>
