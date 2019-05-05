@@ -43,40 +43,22 @@
 <div class="col-md-3">
 <ul class="nav flex-column">
     <li class="nav-item">	    		   
-      <a class="nav-link btn btn-success mb-1" href="#" id="Incomplete">Incomplete
-	      <span class="glyphicon glyphicon-play"></span>
-	    </a>	
-	    
+      <a class="nav-link btn btn-success mb-1" href="#" id="Incomplete">Incomplete</a>		    
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="Inadequate">
-	      Inadequate
-	      <span class="glyphicon glyphicon-play"></span>
-	    </a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="Inadequate">Inadequate</a	      
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="ServiceCenter">
-	      ServiceCenter
-	      <span class="glyphicon glyphicon-play"></span>
-	    </a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="ServiceCenter">ServiceCenter</a>	    
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="NewInstallation">
-	      New Installation
-	      <span class="glyphicon glyphicon-play"></span>
-	    </a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="NewInstallation">New Installation</a>   	   
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="Interim">
-	      Interim
-	      <span class="glyphicon glyphicon-play">
-	    </a>
+     <a class="nav-link btn btn-success mb-1" href="#" id="Interim">Interim</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="DemoReqServdone">
-	      DemoReq.(But Service done)
-	      <span class="glyphicon glyphicon-play"></span>
-	    </a>
+      <a class="nav-link btn btn-success mb-1" href="#" id="DemoReqServdone">DemoReq.(But Service done)</a>	      	     
     </li>
   </ul>
 </div>
@@ -93,6 +75,12 @@
 $(document).ready(()=>{
     
     let Tags={
+     Incomplete : 'We will arrange an engineer visit at your location, as the product needs to be examined physically by the service engineer.'+
+	    'So, we request you kindly provide us the below mentioned details to arrange an engineer.' +
+            '1. Your primary and alternate contact number.'+
+            '2. Address details with the area pin code.'+
+	    '3. Complete model code, date of purchase and serial number.',
+	    
      Inadequate:`We have received your query but are unable to proceed as, the details provided are inadequate.`+ 
      `We request you to share your complete query in order to assist you resolve your concern.`,   
         
@@ -113,7 +101,26 @@ $(document).ready(()=>{
     
     
     $('#name').append('Hi '+$.cookie().FirstName);
-   $('#Inadequate').on("click",(e)=>{
+	
+   $('#Incomplete').on("click",(e)=>{
+       e.preventDefault();
+     let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Incomplete+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+   });
+
+	
+	$('#Inadequate').on("click",(e)=>{
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
