@@ -46,6 +46,9 @@
       <a class="nav-link btn btn-success mb-1" href="#" id="Incomplete">Incomplete</a>
     </li>
     <li class="nav-item">
+      <a class="nav-link btn btn-success mb-1" href="#" id="Inadequate">Incomplete</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link btn btn-success mb-1" href="#" id="ServiceCenter">ServiceCenter</a>
     </li>
     <li class="nav-item">
@@ -72,7 +75,7 @@
 $(document).ready(()=>{
     
     let Tags={
-     Incomplete:`We have received your query but are unable to proceed as, the details provided are inadequate.`+ 
+     Inadequate:`We have received your query but are unable to proceed as, the details provided are inadequate.`+ 
      `We request you to share your complete query in order to assist you resolve your concern.`,   
         
      ServiceCenter : `Kindly visit our service center as the Product requires physical inspection.`+
@@ -92,7 +95,7 @@ $(document).ready(()=>{
     
     
     $('#name').append('Hi '+$.cookie().FirstName);
-   $('#Incomplete').on("click",(e)=>{
+   $('#Inadequate').on("click",(e)=>{
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -101,7 +104,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Incomplete+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Inadequate+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
