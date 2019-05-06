@@ -60,6 +60,9 @@
     <li class="nav-item">
       <a class="nav-link btn btn-success mb-1" href="#" id="DemoReqServdone">DemoReq.(But Service done)</a>	      	     
     </li>
+     <li class="nav-item">
+      <a class="nav-link btn btn-success mb-1" href="#" id="Feedback">Feedback</a>	      	     
+    </li>
   </ul>
 </div>
 		
@@ -96,7 +99,14 @@ $(document).ready(()=>{
         'Be assured that one of our team members would get in touch with you shortly for resolution of your concern.',
         
         DemoReqServdone:'As per the update by our service center team, Demo/Installation  is successfully done at your address. '+
-        'We hope you are completely satisfied with our service.'
+        'We hope you are completely satisfied with our service.',
+	    
+	Feedback:'Thank you for sharing your email with Samsung and providing us the opportunity to assist you.\n\n'+                   
+        'This is with reference to your email regarding your Samsung device.'+
+        'In response to your email, we have noted down this feedback, it will review carefully.'+
+	'If you need any service from Samsung then feel free reach us by same channel.'+   
+        'You are our valuable customer and Samsung looks forward for continuous association with you in future.'
+'
     };
     
     
@@ -199,6 +209,23 @@ $(document).ready(()=>{
       cust_name='Mr. '+lname;
     
     let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.DemoReqServdone+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+   });
+	
+	 $('#Feedback').on("click",(e)=>{
+       e.preventDefault();
+     let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.Feedback+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
