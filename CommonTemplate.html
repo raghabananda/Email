@@ -43,25 +43,25 @@
 <div class="col-md-3">
 <ul class="nav flex-column">
     <li class="nav-item">	    		   
-      <a class="nav-link btn btn-success mb-1" href="#" id="Incomplete">Incomplete</a>		    
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="Incomplete">Incomplete</a>		    
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="Inadequate">Inadequate</a	      
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="Inadequate">Inadequate</a	      
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="ServiceCenter">ServiceCenter</a>	    
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="ServiceCenter">ServiceCenter</a>	    
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="NewInstallation">New Installation</a>   	   
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="NewInstallation">New Installation</a>   	   
     </li>
     <li class="nav-item">
-     <a class="nav-link btn btn-success mb-1" href="#" id="Interim">Interim</a>
+     <a class="nav-link btn btn-outline-success mb-1" href="#" id="Interim">Interim</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="DemoReqServdone">DemoReq.(But Service done)</a>	      	     
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="DemoReqServdone">DemoReq.(But Service done)</a>	      	     
     </li>
      <li class="nav-item">
-      <a class="nav-link btn btn-success mb-1" href="#" id="Feedback">Feedback</a>	      	     
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="Feedback">Feedback</a>	      	     
     </li>
   </ul>
 </div>
@@ -113,6 +113,8 @@ $(document).ready(()=>{
     $('#name').append('Hi '+$.cookie().FirstName);
 	
    $('#Incomplete').on("click",(e)=>{
+     $('#Incomplete').removeClass("btn btn-outline-success");	   
+     $('#Incomplete').addClass("btn btn-success");   
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -127,10 +129,14 @@ $(document).ready(()=>{
     $('#txtarea2').val(value);
     $('#txtareatag1').val(tagging);
     $('#Tag').val(tag);
+	   
    });
 
 	
-	$('#Inadequate').on("click",(e)=>{
+    $('#Inadequate').on("click",(e)=>{
+	    
+     $('#Inadequate').removeClass("btn btn-outline-success");	   
+     $('#Inadequate').addClass("btn btn-success");  
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -149,6 +155,8 @@ $(document).ready(()=>{
 
     
     $('#ServiceCenter').on("click",(e)=>{
+     $('#ServiceCenter').removeClass("btn btn-outline-success");	   
+     $('#ServiceCenter').addClass("btn btn-success");  
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -166,6 +174,8 @@ $(document).ready(()=>{
    });
     
     $('#NewInstallation').on("click",(e)=>{
+     $('#NewInstallation').removeClass("btn btn-outline-success");	   
+     $('#NewInstallation').addClass("btn btn-success"); 
        e.preventDefault();
       let cust_name='';
     let lname=$('#lname').val();
@@ -183,6 +193,8 @@ $(document).ready(()=>{
    });
     
      $('#Interim').on("click",(e)=>{
+     $('#Interim').removeClass("btn btn-outline-success");	   
+     $('#Interim').addClass("btn btn-success"); 
        e.preventDefault();
       let cust_name='';
     let lname=$('#lname').val();
@@ -200,6 +212,8 @@ $(document).ready(()=>{
    });
     
     $('#DemoReqServdone').on("click",(e)=>{
+     $('#DemoReqServdone').removeClass("btn btn-outline-success");	   
+     $('#DemoReqServdone').addClass("btn btn-success"); 
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -216,7 +230,9 @@ $(document).ready(()=>{
     $('#Tag').val(tag);
    });
 	
-	 $('#Feedback').on("click",(e)=>{
+     $('#Feedback').on("click",(e)=>{
+     $('#Feedback').removeClass("btn btn-outline-success");	   
+     $('#Feedback').addClass("btn btn-success"); 
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
