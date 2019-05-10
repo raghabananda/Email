@@ -28,18 +28,18 @@
     <li class="nav-item">      
        <a class="nav-link" href="DashBoard">Dashboard</a>
     </li>
-      <li class="nav-item">      
-         <input type="text" class="nav-link form-control" id="lname" placeholder="Customer's Last name">
-    </li>
-      <li class="nav-item">      
-         <input type="text" class="nav-link form-control" id="ref" placeholder="Reference/Req. No.">
-    </li>
     <li class="nav-item">      
          <a class="nav-link" href="#" id="logout">Log Out</a>
     </li>
   </ul>
  </div>
 </nav><hr/>
+	
+	<div class="text-center">
+	 <input type="text" class="nav-link form-control" id="lname" placeholder="Customer's Last name">
+         <input type="text" class="nav-link form-control" id="ref" placeholder="Reference/Req. No.">
+	</div>
+	<hr/>
 <div class="container">
 <div class="row">
 
@@ -79,6 +79,14 @@
  </div>
 <script>
 $(document).ready(()=>{
+	
+	 //Log Out
+    $('#logout').on("click",()=>{                
+      $.removeCookie('FirstName',{path: '/'});
+      $.removeCookie('LastName',{path: '/'});
+      $.removeCookie('EmpID',{path: '/'});
+      window.location.href='/Email/';      
+    });
     
     let Tags={
      Incomplete : 'We will arrange an engineer visit at your location, as the product needs to be examined physically by the service engineer.'+
