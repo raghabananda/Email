@@ -43,7 +43,7 @@
 			   <input type="text" class="nav-link form-control" id="lname" placeholder="Customer's Last name"> 
 		      </div>
 		      <div class="col-md-3">
-			 <input type="text" class="nav-link form-control" id="ref" placeholder="Reference/Req. No.">  
+			 <input type="text" class="nav-link form-control" id="ref" placeholder="Reference/Req. no..">  
 		      </div>
 		      <div class="col-md-3"></div>
 	           </div>
@@ -146,7 +146,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Incomplete+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Incomplete+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
@@ -169,7 +169,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Inadequate+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.Inadequate+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
@@ -191,9 +191,10 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.ServiceCenter+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.ServiceCenter+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
-   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+`
+ Online Support Team`;
     $('#txtarea2').val(value);
     $('#txtareatag1').val(tagging);
     $('#Tag').val(tag);
@@ -212,7 +213,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! \n\n`+Tags.NewInstallation+`\n\nThe service request no is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! \n\n`+Tags.NewInstallation+`\n\nThe service request no. is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
@@ -233,7 +234,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! \n\n`+Tags.Interim+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! \n\n`+Tags.Interim+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
@@ -254,7 +255,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.DemoReqServdone+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.DemoReqServdone+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
@@ -275,7 +276,7 @@ $(document).ready(()=>{
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.Feedback+`\n\nThe reference no of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.Feedback+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
