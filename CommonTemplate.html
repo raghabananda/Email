@@ -77,7 +77,7 @@
       <a class="nav-link btn btn-outline-success mb-1" href="#" id="Feedback">Feedback</a>	      	     
     </li>
     <li class="nav-item">
-      <a class="nav-link btn btn-outline-success mb-1" href="#" id="ACCoolingIssue">AC Cooling Issue</a>	      	     
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="RefCoolingIssue">Ref Cooling Issue</a>	      	     
     </li>
     <li class="nav-item">
       <a class="nav-link btn btn-outline-success mb-1" href="#" id="RefHeatingIssue">Ref Heating Issue</a>	      	     
@@ -135,7 +135,7 @@ $(document).ready(()=>{
 	'If you need any service from Samsung then feel free reach us by same channel.'+   
         'You are our valuable customer and Samsung looks forward for continuous association with you in future.',
 	 
-	ACCoolingIssue: `This is with reference to your email regarding no cooling issue in your Samsung Refrigerator.Here, we are suggesting you few quick & easy Troubleshooting steps with some basic check points, which may help to resolve the issue immediately: 
+	RefCoolingIssue: `This is with reference to your email regarding no cooling issue in your Samsung Refrigerator.Here, we are suggesting you few quick & easy Troubleshooting steps with some basic check points, which may help to resolve the issue immediately: 
 
 1- Kindly set the temperature setting in both sections as per the season.
 2- Avoid the frequent door opening and closing of the refrigerator.
@@ -323,11 +323,11 @@ In case the issue still persists and you would like to opt for an engineer's vis
     $('#Tag').val(tag);
    });
 
-   $('#ACCoolingIssue').on("click",(e)=>{
+   $('#RefCoolingIssue').on("click",(e)=>{
      $('a').removeClass("btn-success");
      $('a').addClass("btn-outline-success");	   
-     $('#ACCoolingIssue').removeClass("btn-outline-success");	   
-     $('#ACCoolingIssue').addClass("btn-success"); 
+     $('#RefCoolingIssue').removeClass("btn-outline-success");	   
+     $('#RefCoolingIssue').addClass("btn-success"); 
        e.preventDefault();
      let cust_name='';
     let lname=$('#lname').val();
@@ -336,7 +336,7 @@ In case the issue still persists and you would like to opt for an engineer's vis
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.ACCoolingIssue+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.RefCoolingIssue+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
