@@ -85,6 +85,9 @@
     <li class="nav-item">
       <a class="nav-link btn btn-outline-success mb-1" href="#" id="VisitDone">Visit Done</a>	      	     
     </li>
+    <li class="nav-item">
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="Vocrunning">Voc Running Case</a>	      	     
+    </li>
   </ul>
 </div>
 		
@@ -171,7 +174,9 @@ In case the issue still persists and you would like to opt for an engineer's vis
 `,
 	    VisitDone:`We sincerely regret for the inconvenience caused to you. This is with reference to your email regarding service issue of your Samsung washing machine.
 \nAs per the service request, an engineer has been already visited at your place and repaired your product. If still you are facing any issue then please get back to us, we will surely assist you. 
-`
+`,
+	    Vocrunning:`We have already registered your complaint against your poduct with below reference number.
+Our team will shortly get in touch with you for further discussion on the case.`
     };
     
     
@@ -384,6 +389,27 @@ In case the issue still persists and you would like to opt for an engineer's vis
       cust_name='Mr. '+lname;
     
     let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.VisitDone+`\nYour service request no. is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+   });
+	
+	$('#Vocrunning').on("click",(e)=>{
+     $('a').removeClass("btn-success");
+     $('a').addClass("btn-outline-success");	   
+     $('#Vocrunning').removeClass("btn-outline-success");	   
+     $('#Vocrunning').addClass("btn-success"); 
+       e.preventDefault();
+     let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.Vocrunning+`\nYour service request no. is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 407 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
