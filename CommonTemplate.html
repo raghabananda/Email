@@ -88,6 +88,9 @@
     <li class="nav-item">
       <a class="nav-link btn btn-outline-success mb-1" href="#" id="Vocrunning">Voc Running Case</a>	      	     
     </li>
+    <li class="nav-item">
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="estore">E-Store</a>	      	     
+    </li>
   </ul>
 </div>
 		
@@ -185,7 +188,16 @@ In case the issue still persists and you would like to opt for an engineer's vis
 \nAs per the service request, an engineer has been already visited at your place and repaired your product. If still you are facing any issue then please get back to us, we will surely assist you. 
 `,
 	    Vocrunning:`We have already registered your complaint against your product with below reference number.
-Our team will shortly get in touch with you for further discussion on the case.`
+Our team will shortly get in touch with you for further discussion on the case.`,
+	    
+	    estore:`
+We would like to inform you that we have a dedicated Support team for handling E-shop related queries/concern.
+So we suggest you that write a mail to e-shop concerned team from your end. They will inform you accordingly in this regard.
+
+See the mentioned below details;
+
+Email- support.estore@samsung.com
+`
     };
     
     
@@ -426,6 +438,26 @@ Our team will shortly get in touch with you for further discussion on the case.`
     $('#Tag').val(tag);
    });
 
+	$('#estore').on("click",(e)=>{
+     $('a').removeClass("btn-success");
+     $('a').addClass("btn-outline-success");	   
+     $('#Vocrunning').removeClass("btn-outline-success");	   
+     $('#Vocrunning').addClass("btn-success"); 
+       e.preventDefault();
+     let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!!\n\n`+Tags.estore+`\n\nReference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 57 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+   });
 });    
 </script>
 </body>
