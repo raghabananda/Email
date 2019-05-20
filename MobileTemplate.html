@@ -16,15 +16,13 @@
     </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-white mb-4">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-4">
     <div class="container">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Email Template</a>
-    </li>    
+    <a class="nav-link" href="#"><h3>Email Template</h3></a>
+  <ul class="navbar-nav">       
       <li class="nav-item">      
          <a class="nav-link" href="#" id="name"></a>
-    </li>
+      </li>
     <li class="nav-item">      
        <a class="nav-link" href="DashBoard">Dashboard</a>
     </li>
@@ -56,7 +54,7 @@
 <div class="col-md-3">
 <ul class="nav flex-column">
     <li class="nav-item">	    		   
-      <a class="nav-link btn btn-outline-success mb-1" href="#" id="Incomplete">Incomplete</a>		    
+      <a class="nav-link btn btn-outline-success mb-1" href="#" id="heatingissue">Heating issue</a>		    
     </li>
     <li class="nav-item">
       <a class="nav-link btn btn-outline-success mb-1" href="#" id="Inadequate">Inadequate</a	      
@@ -90,6 +88,51 @@
 <script>
       $(document).ready(()=>{
       $('#name').append('Hi '+$.cookie().FirstName);
+	      
+	      let MobileTemplate= {
+	          heatingissue:`There are some reasons and solutions to overcome from Heating issues:  
+
+1. Disable unwanted Functions like Bluetooth & Location Settings.
+2. Limit the usage of 4G and 3G Data for longer duration can cause heating issue.
+3. Too Many processes (Apps) running at same time.
+4. Missing Updates on your device.
+5. Old battery or Non genuine battery usage.
+6. Too Many Apps Installed on device.
+7. Long duration of Graphics intensive Gaming sessions.
+8. Usage of Smartphone when Charging.
+9. Thinness of the device, faster processor might also result in device getting warm, while this is normal.
+10. If the heating is very high advice customer to get the software of the device Updated to the latest version.
+11. A Factory reset can also be performed after taking the data back up of the device.
+
+NOTE: If abnormal heating continues, then kindly visit the nearest Samsung authorized Service Center.  The link is given below to search service center near to your location.
+
+https://www.samsung.com/in/support/service-center/`
+		      
+		      
+	      };
+	      
+	      //Click events
+	     $('#Incomplete').on("click",(e)=>{
+     $('a').removeClass("btn-success");
+     $('a').addClass("btn-outline-success");	   
+     $('#Incomplete').removeClass("btn-outline-success");	   
+     $('#Incomplete').addClass("btn-success");   
+       e.preventDefault();
+     let cust_name='';
+    let lname=$('#lname').val();
+    if(lname==='')
+     cust_name= 'Customer'; 
+    else
+      cust_name='Mr. '+lname;
+    
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+MobileTemplate.heatingissue+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 57 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
+   let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
+    $('#txtarea2').val(value);
+    $('#txtareatag1').val(tagging);
+    $('#Tag').val(tag);
+	   
+   });
       });
 </script>
 </body>
