@@ -27,7 +27,7 @@
           <a class="nav-link" href="CommonTemplate">Common Template</a>
       </li>    
       <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="name" data-toggle="dropdown">        
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">        
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#" id="logout">Log Out</a>        
@@ -90,7 +90,7 @@
 $(document).ready(()=>{ 
   
      //Submit event
-    $('#name').append('Hi '+$.cookie().FirstName);
+    $('#navbardrop').append('Hi '+$.cookie().FirstName);
     $('#Submit').on("click",(e)=>{
     e.preventDefault();
         let cust_name='';
