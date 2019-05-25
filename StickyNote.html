@@ -84,7 +84,8 @@ var app=angular.module("App",[])
              
              $scope.Add=(myform)=>{
                $scope.mymodel=[...$scope.mymodel,myform];
-                 myform=null;
+                 myform.Header="";
+                 myform.Content="";
              };
              
          });
