@@ -67,6 +67,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 id="{{data.ID}}">{{data.Header}}</h3>
+                    <button class="text-right" ng-click="Remove($index)">&times;</button>
                 </div> 
                 <div class="card-body">
                     <textarea class="form-control" rows="8">{{data.Content}}</textarea>
@@ -87,6 +88,11 @@ var app=angular.module("App",[])
                $scope.mymodel=[...$scope.mymodel,{ID:id,Header:myform.Header,Content:myform.Content}];
                  myform.Header='';
                  myform.Content='';
+             };
+             
+             $scope.Remove=(index)=>{
+               let arr= $scope.mymodel.filter(obj=>obj.ID!=index);
+                 $scope.mymodel=...arr;
              };
              
          });
