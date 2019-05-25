@@ -83,7 +83,7 @@ var app=angular.module("App",[])
            $scope.mymodel=[{Header:"Test",Content:"This is test content"}];
              
              $scope.Add=(myform)=>{
-               $scope.mymodel=[...$scope.mymodel,myform];
+               $scope.mymodel.push(myform);
                  myform.Header="";
                  myform.Content="";
              };
