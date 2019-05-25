@@ -205,9 +205,7 @@ See the mentioned below details;
 
 Email- support.estore@samsung.com
 `,
-physicaldamage:`This is in the
-reference to your email regarding display issue in your Samsung device.
-
+physicaldamage:`This is in the reference to your email regarding display issue in your Samsung device.
 We would like to inform you that as per Samsung warranty guidelines,
 physical damage/ impact damage/ water locked issue does not consider
 under the warranty. Hence, service will be done on chargeable basis.
@@ -221,8 +219,7 @@ our website. Please click on the link mentioned below to get more
 information:
 
 http://www.samsung.com/in/support/servicelocation/
-`	    
-	    
+`	    	    
     };
     
     
@@ -497,7 +494,7 @@ http://www.samsung.com/in/support/servicelocation/
     else
       cust_name='Mr. '+lname;
     
-    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.physicaldamage+`\n\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 57 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
+    let value=`Dear `+cust_name+`,\n\nGreetings from Samsung!!! We deeply regret for the inconvenience caused to you.\n\n`+Tags.physicaldamage+`\nThe reference no. of your email is `+$('#ref').val()+`.\n\nPlease write an email or contact us in our customer help line no. 1800 57 267864, in case you need any assistance.\n\nWarm Regards,\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\nSamsung Technical Support Team\n\nDisclaimer: All materials on this site are protected by copyright and intellectual property laws and are the property of Samsung India Electronics Pvt. Ltd. unless stated otherwise; you may access and download the materials located on www.samsung.com/in only for personal, non-commercial use.`;   
     let tagging= `Email sent to customer.\n\n`+$.cookie().FirstName+` `+$.cookie().LastName+`\n`+$.cookie().EmpID+`\nOnline Support Team`
    let tag= $.cookie().FirstName+` `+$.cookie().LastName+` `+$.cookie().EmpID+` Online Support Team`;
     $('#txtarea2').val(value);
