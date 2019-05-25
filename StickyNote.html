@@ -49,7 +49,7 @@
 
 <div class="form-group">
 <label for="Content">Content :</label>
-<textarea class="form-control" ng-model="myform.Content" row="40"></textarea>
+<textarea class="form-control" ng-model="myform.Content" row="10"></textarea>
 </div>
 
 </div>
@@ -63,13 +63,13 @@
 </div>
 <div class="col-md-9">
     <div class="row">
-         <div class="col-md-3" ng-repeat="data in mymodel">
+         <div class="col-md-4" ng-repeat="data in mymodel">
             <div class="card">
                 <div class="card-header">
                     <h3 id="{{data.ID}}">{{data.Header}}</h3>
                 </div> 
                 <div class="card-body">
-                    <textarea class="form-control" row="30">{{data.Content}}</textarea>
+                    <textarea class="form-control" row="5">{{data.Content}}</textarea>
                 </div> 
              </div> 
         </div>
