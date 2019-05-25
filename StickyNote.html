@@ -1,0 +1,80 @@
+<html ng-app="App">
+<head>
+    <title>Email Template</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+</head>
+<body ng-controller="StickyNote">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><h3>Email Template</h3></a>
+  <ul class="navbar-nav"> 
+      <li class="nav-item">
+          <a class="nav-link active" href="DashBoard">DashBoard</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="CommonTemplate">Common Template</a>
+      </li>
+       <li class="nav-item">
+          <a class="nav-link" href="MobileTemplate">Mobile Template</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="CommonTemplate" id="navbardrop"></a>
+      </li> 
+      <li class="nav-item">
+          <a class="nav-link" href="CommonTemplate" id="logout">Log Out</a>
+      </li>             
+  </ul>
+ </div>
+</nav>
+
+<br/><br/>
+<div class="container-fluid mt-5">
+<div class="row">
+<div class="col-md-4">
+<form>
+<div class="card">
+
+<div class="card-header">
+<h3>Sticky Note:</h3>
+</div>
+<div class="card-body">
+
+<div class="form-group">
+<label for="Header">Header :</label>
+<input type="text" class="form-control" ng-model="myform.Header">
+</div>
+
+<div class="form-group">
+<label for="Content">Content :</label>
+<textarea class="form-control" ng-model="myform.Content"></textarea>
+</div>
+
+</div>
+
+<div class="card-footer">
+<button id="Add" class="btn btn-success btn-block" ng-click="Add(myform)">Add</button>
+</div>
+
+</div>
+</form>
+</div>
+<div class="col-md-8">
+
+
+</div>
+</div>
+</div>
+<script>
+var app=angular.module("App",[])
+         .controller("StickyNote",($scope)=>{
+           
+         });
+
+
+</script>
+
+</body>
+</html>
