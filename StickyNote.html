@@ -84,7 +84,7 @@ var app=angular.module("App",[])
              
              $scope.Add=(myform)=>{
                  let id= Math.Random();
-               $scope.mymodel.push(ID:id,{myform});
+               $scope.mymodel.push({ID:id,Header:myform.Header,Content:myform.Content});
              };
              
          });
