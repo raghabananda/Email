@@ -73,7 +73,7 @@ var app=angular.module("App",[])
              $scope.Add=(Header)=>{
                  let id= Math.random();
                $scope.mymodel=[...$scope.mymodel,{ID:id,Header}];
-                 Header='';                 
+                 $scope.Header='';                 
              };
              
              $scope.Remove=(index)=>{
