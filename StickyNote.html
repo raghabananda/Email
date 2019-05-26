@@ -68,12 +68,12 @@
 <script>
 var app=angular.module("App",[])
          .controller("StickyNote",($scope)=>{
-           $scope.mymodel=[{ID:1, Header:"Test"}];
+           $scope.mymodel=[];
              
              $scope.Add=(Header)=>{
                  let id= Math.random();
                $scope.mymodel=[...$scope.mymodel,{ID:id,Header}];
-                 myform.Header='';                 
+                 Header='';                 
              };
              
              $scope.Remove=(index)=>{
