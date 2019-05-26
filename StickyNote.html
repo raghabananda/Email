@@ -38,7 +38,7 @@
             <div class="col-md-7 col-sm-12">
                 <div>
                     <form class="form-inline">
-                     <input class="form-control mr-sm-2" type="text" ng-model="Header" placeholder="Add Header of stickynote">
+                     <input class="form-control mr-sm-2" type="text" ng-model="Header" placeholder="Add stickynote header">
                      <button class="btn btn-success" type="button" ng-click="Add(Header)">Add</button>
                     </form>
                 </div>
@@ -50,9 +50,11 @@
     <div class="row mb-5">
          <div class="col-md-3" ng-repeat="data in mymodel">
             <div class="card">
-                <div class="card-header">
-                    <h3 id="{{data.ID}}">{{data.Header}}</h3>
-                    <button class="close" ng-click="Remove(data.ID)">&times;</button>
+                <div class="card-header">                                        
+                    <div class="alert alert-success alert-dismissible fade show">
+                       <button type="button" class="close" ng-click="Remove(data.ID)">&times;</button>
+                       <strong id="{{data.ID}}">{{data.Header}}</strong> 
+                    </div>
                 </div> 
                 <div class="card-body">
                     <textarea class="form-control" rows="8"></textarea>
