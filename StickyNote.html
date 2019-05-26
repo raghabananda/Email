@@ -32,45 +32,29 @@
 
 <br/><br/>
 <div class="container-fluid mt-5">
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-control">
+                    <p>
+                        <input type="text" class="form-control" ng-model="Header">
+                        <button class="btn btn-success" ng-click="Add(Header)">Add</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
 <div class="row">
-<div class="col-md-3">
-<form>
-<div class="card">
-
-<div class="card-header">
-<h3>Sticky Note:</h3>
-</div>
-<div class="card-body">
-
-<div class="form-group">
-<label for="Header">Header :</label>
-<input type="text" class="form-control" ng-model="myform.Header">
-</div>
-
-<div class="form-group">
-<label for="Content">Content :</label>
-<textarea class="form-control" ng-model="myform.Content" rows="10"></textarea>
-</div>
-
-</div>
-
-<div class="card-footer">
-<button id="Add" class="btn btn-success btn-block" ng-click="Add(myform)">Add</button>
-</div>
-
-</div>
-</form>
-</div>
-<div class="col-md-9">
+<div class="col-md-12">
     <div class="row mb-5">
-         <div class="col-md-4" ng-repeat="data in mymodel">
+         <div class="col-md-3" ng-repeat="data in mymodel">
             <div class="card">
                 <div class="card-header">
                     <h3 id="{{data.ID}}">{{data.Header}}</h3>
-                    <span class="text-right" ng-click="Remove(data.ID)">&times;</span>
+                    <button class="close" ng-click="Remove(data.ID)">&times;</button>
                 </div> 
                 <div class="card-body">
-                    <textarea class="form-control" rows="8">{{data.Content}}</textarea>
+                    <textarea class="form-control" rows="8"></textarea>
                 </div> 
              </div> 
         </div>
@@ -81,13 +65,12 @@
 <script>
 var app=angular.module("App",[])
          .controller("StickyNote",($scope)=>{
-           $scope.mymodel=[{ID:1, Header:"Test",Content:"This is test content"}];
+           $scope.mymodel=[{ID:1, Header:"Test"}];
              
-             $scope.Add=(myform)=>{
+             $scope.Add=(Header)=>{
                  let id= Math.random();
-               $scope.mymodel=[...$scope.mymodel,{ID:id,Header:myform.Header,Content:myform.Content}];
-                 myform.Header='';
-                 myform.Content='';
+               $scope.mymodel=[...$scope.mymodel,{ID:id,Header}];
+                 myform.Header='';                 
              };
              
              $scope.Remove=(index)=>{
