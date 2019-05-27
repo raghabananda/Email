@@ -35,9 +35,9 @@
        <div class="card">
           <div class="card-header">
             <h4>GCIC Work</h4> 
-            <input type="text" id="FirstName" ng-model="data.FirstName">
-             <input type="text" id="LastName" ng-model="data.LastName">
-             <input type="text" id="EmpID" ng-model="data.EmpID">
+            <input type="text" id="FirstName" ng-model="data.FirstName" class="form-control">
+             <input type="text" id="LastName" ng-model="data.LastName" class="form-control">
+             <input type="text" id="EmpID" ng-model="data.EmpID" class="form-control">
           </div>
       <div class="card-body">         
        <div class="row">
@@ -95,7 +95,8 @@
                 <div class="col-md-4">
                   <input type="text" class="form-control" 
                          value="{{value.FirstName+' '+value.LastName+' '+value.EmpID+' '+'Online Support Team'}}">
-                  <textarea class="form-control">{{
+                  <br><br><br>
+                  <textarea class="form-control" rows="5">{{
                       'Email sent to customer.\n\n'+
                       value.FirstName+'\n'+
                       value.LastName+'\n'+
