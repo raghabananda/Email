@@ -96,7 +96,7 @@
         $('#LastName').val($.cookie().LastName);
         $('#EmpID').val($.cookie().EmpID);
         
-        Console.log($('#FirstName').html());
+        console.log($('#FirstName').val());
         //LogOut
          $('#logout').on("click",()=>{                
       $.removeCookie('FirstName',{path: '/'});
