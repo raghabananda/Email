@@ -1,4 +1,4 @@
-<html>
+<html ng-app="App">
   <head>
  <title>Email Template</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -15,20 +15,11 @@
             }
     </script>
   </head>
-  <body>
+  <body ng-controller="MyController">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="#"><h3>Email Template</h3></a>
-  <ul class="navbar-nav"> 
-      <li class="nav-item">
-          <a class="nav-link active" href="DashBoard">DashBoard</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="CommonTemplate">Common Template</a>
-      </li>
-       <li class="nav-item">
-          <a class="nav-link" href="MobileTemplate">Mobile Template</a>
-      </li>
+  <ul class="navbar-nav">      
       <li class="nav-item">
           <a class="nav-link" href="CommonTemplate" id="navbardrop"></a>
       </li> 
@@ -42,6 +33,9 @@
        <div class="card">
           <div class="card-header">
             <h4>GCIC Work</h4>
+             <input type="hidden" id="FirstName" ng-model="FirstName">
+             <input type="hidden" id="LastName" ng-model="LastName">
+             <input type="hidden" id="EmpID" ng-model="EmpID">
           </div>
       <div class="card-body">         
        <div class="row">
@@ -86,11 +80,23 @@
       </div>
      </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" ng-repeat="">
+          
+        </div>
+        </div>
+      </div>
+    </div>
     
     <script>
       $(document).ready(()=>{
          $('#navbardrop').append('Hi '+$.cookie().FirstName);
-         
+        $('#FirstName').val($.cookie().FirstName);
+        $('#LastName').val($.cookie().LastName);
+        $('#EmpID').val($.cookie().EmpID);
+        
+        //LogOut
          $('#logout').on("click",()=>{                
       $.removeCookie('FirstName',{path: '/'});
       $.removeCookie('LastName',{path: '/'});
@@ -100,7 +106,10 @@
       });
     </script>
     <script>
-    
+    var app=angular.module("App",[])
+            .controller("MyController",($scope)=>{
+                $scope.
+            });
     </script>
   </body>
 </html>
