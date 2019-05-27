@@ -8,7 +8,10 @@
     <script>
         $(window).on("load",()=>{
             try{
-                console.log($.cookie().FirstName.length);
+              console.log($.cookie().FirstName.length);
+              $('#FirstName').val($.cookie().FirstName);
+              $('#LastName').val($.cookie().LastName);
+              $('#EmpID').val($.cookie().EmpID);
             }
             catch(error){
                window.location.href='/Email/';
@@ -121,9 +124,7 @@
     <script>
       $(document).ready(()=>{
         $('#navbardrop').append('Hi '+$.cookie().FirstName);
-        $('#FirstName').val($.cookie().FirstName);
-        $('#LastName').val($.cookie().LastName);
-        $('#EmpID').val($.cookie().EmpID);
+        
                
         //LogOut
       $('#logout').on("click",()=>{                
