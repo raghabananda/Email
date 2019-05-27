@@ -8,7 +8,10 @@
     <script>
         $(window).on("load",()=>{
             try{
-              console.log($.cookie().FirstName.length);              
+              console.log($.cookie().FirstName.length); 
+               $('#FirstName').val($.cookie().FirstName);
+              $('#LastName').val($.cookie().LastName);
+              $('#EmpID').val($.cookie().EmpID);
             }
             catch(error){
                window.location.href='/Email/';
@@ -34,7 +37,10 @@
     <div class="container mt-3"> 
        <div class="card">
           <div class="card-header">
-            <h4>GCIC Work</h4>             
+            <h4>GCIC Work</h4> 
+            <input type="hidden" id="FirstName" ng-model="data.FirstName">
+             <input type="hidden" id="LastName" ng-model="data.LastName">
+             <input type="hidden" id="EmpID" ng-model="data.EmpID">
           </div>
       <div class="card-body">         
        <div class="row">
@@ -130,7 +136,9 @@
       window.location.href='/Email/';      
     });
       
-    
+      });
+      </script>
+    <script>
     var app=angular.module("App",[])
             .controller("MyController",($scope)=>{
               $scope.model=[];
@@ -140,9 +148,9 @@
                   let rectime= data.emailwithtime.slice(data.emailwithtime.search("all")+3);
                   let temp={
                             ID:index,
-                            FirstName:FirstName, 
-                            LastName:LastName,
-                            EmpID:EmpID ,
+                            FirstName:data.FirstName, 
+                            LastName:data.LastName,
+                            EmpID:data.EmpID ,
                             Caption:data.caption,
                             EmailID:email.trim(),
                             ReceiveTime:rectime.trim(),
@@ -165,7 +173,7 @@
               
             });
         
-        });
+     
     </script>
   </body>
 </html>
