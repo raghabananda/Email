@@ -8,10 +8,7 @@
     <script>
         $(window).on("load",()=>{
             try{
-              console.log($.cookie().FirstName.length);
-              $('#FirstName').val($.cookie().FirstName);
-              $('#LastName').val($.cookie().LastName);
-              $('#EmpID').val($.cookie().EmpID);
+              console.log($.cookie().FirstName.length);              
             }
             catch(error){
                window.location.href='/Email/';
@@ -37,10 +34,7 @@
     <div class="container mt-3"> 
        <div class="card">
           <div class="card-header">
-            <h4>GCIC Work</h4>
-             <input type="hidden" id="FirstName" ng-model="data.FirstName">
-             <input type="hidden" id="LastName" ng-model="data.LastName">
-             <input type="hidden" id="EmpID" ng-model="data.EmpID">
+            <h4>GCIC Work</h4>             
           </div>
       <div class="card-body">         
        <div class="row">
@@ -124,7 +118,9 @@
     <script>
       $(document).ready(()=>{
         $('#navbardrop').append('Hi '+$.cookie().FirstName);
-        
+        let FirstName=($.cookie().FirstName);
+        let LastName=($.cookie().LastName);
+        let EmpID=($.cookie().EmpID);             
                
         //LogOut
       $('#logout').on("click",()=>{                
@@ -133,9 +129,8 @@
       $.removeCookie('EmpID',{path: '/'});
       window.location.href='/Email/';      
     });
-      });
-    </script>
-    <script>
+      
+    
     var app=angular.module("App",[])
             .controller("MyController",($scope)=>{
               $scope.model=[];
@@ -145,9 +140,9 @@
                   let rectime= data.emailwithtime.slice(data.emailwithtime.search("all")+3);
                   let temp={
                             ID:index,
-                            FirstName:data.FirstName, 
-                            LastName:data.LastName,
-                            EmpID:data.EmpID ,
+                            FirstName:FirstName, 
+                            LastName:LastName,
+                            EmpID:EmpID ,
                             Caption:data.caption,
                             EmailID:email.trim(),
                             ReceiveTime:rectime.trim(),
@@ -169,6 +164,8 @@
               };
               
             });
+        
+        });
     </script>
   </body>
 </html>
