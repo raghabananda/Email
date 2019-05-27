@@ -30,32 +30,33 @@
   </ul>
  </div>
 </nav>
+    <form>
     <div class="container mt-3"> 
        <div class="card">
           <div class="card-header">
             <h4>GCIC Work</h4>
-             <input type="hidden" id="FirstName" ng-model="FirstName">
-             <input type="hidden" id="LastName" ng-model="LastName">
-             <input type="hidden" id="EmpID" ng-model="EmpID">
+             <input type="hidden" id="FirstName" ng-model="data.FirstName">
+             <input type="hidden" id="LastName" ng-model="data.LastName">
+             <input type="hidden" id="EmpID" ng-model="data.EmpID">
           </div>
       <div class="card-body">         
        <div class="row">
         <div class="col-md-3">
              <div class="form-group">
                   <label for="caption">Caption :</label>
-                  <input type="text" class="form-control" id="caption"> 
+                  <input type="text" class="form-control" id="caption" ng-model="data.caption"> 
              </div> 
          </div>
         <div class="col-md-6">
           <div class="form-group">
                 <label for="emailwithtime">Email & Received Time :</label>
-                <input type="text" class="form-control" id="emailwithtime"> 
+                <input type="text" class="form-control" id="emailwithtime" ng-model="data.emailwithtime"> 
              </div>
          </div>
         <div class="col-md-3">
           <div class="form-group">
               <label for="senttime">Sent Time :</label>
-              <input type="text" class="form-control" id="senttime"> 
+              <input type="text" class="form-control" id="senttime" ng-model="data.senttime"> 
             </div>
          </div> 
       </div> 
@@ -65,26 +66,53 @@
         <div class="col-md-6">
            <div class="form-group">
               <label for="receivedemail">Received Mail : </label>
-              <textarea type="text" class="form-control" id="receivedemail" rows="22"></textarea> 
+              <textarea type="text" class="form-control" id="receivedemail" rows="22" ng-model="data.receivedemail"></textarea> 
             </div> 
         </div>
         <div class="col-md-6">
           <div class="form-group">
               <label for="sentmail">Sent Mail : </label>
-              <textarea type="text" class="form-control" id="sentmail" rows="22"></textarea> 
+              <textarea type="text" class="form-control" id="sentmail" rows="22" ng-model="data.sentmail"></textarea> 
             </div> 
         </div>
       </div>     
         <div class="text-center">
-          <button class="btn btn-success">Save</button>                         
+          <button class="btn btn-success" ng-click="Save(data)">Save</button>                         
         </div>
       </div>
      </div>
     </div>
+    </form>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          
+        <div class="col-md-12" ng-repeat="value in model">
+          <div class="card" id="{{value.ID}}">
+            <div class="card-header">
+              <h5>{{value.Caption}}</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <input type="text" class="form-control" 
+                         value="{{value.FirstName+' '+value.LastName+' '+value.EmpID+' '+'Online Support Team'}}">
+                  <textarea class="form-control">{{
+                      'Email sent to customer.\n\n'+
+                      value.FirstName+'\n'+
+                      value.LastName+'\n'+
+                      value.EmpID+'\n'+
+                      'Online Support Team'
+                    }}</textarea>
+                </div>
+                <div class="col-md-8">
+                  <textarea class="form-control" rows="18">{{
+                       value.EmailID+' '+'view all '+value.SentTime+'\n'+
+                       value.SentMail+'\n\n'+value.EmailID+' sent mail on '+value.ReceiveTime+'\n'+
+                       value.ReceivedMail
+                    }}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         </div>
       </div>
@@ -92,14 +120,13 @@
     
     <script>
       $(document).ready(()=>{
-         $('#navbardrop').append('Hi '+$.cookie().FirstName);
+        $('#navbardrop').append('Hi '+$.cookie().FirstName);
         $('#FirstName').val($.cookie().FirstName);
         $('#LastName').val($.cookie().LastName);
         $('#EmpID').val($.cookie().EmpID);
-        
-        console.log($('#FirstName').val());
+               
         //LogOut
-         $('#logout').on("click",()=>{                
+      $('#logout').on("click",()=>{                
       $.removeCookie('FirstName',{path: '/'});
       $.removeCookie('LastName',{path: '/'});
       $.removeCookie('EmpID',{path: '/'});
@@ -110,7 +137,36 @@
     <script>
     var app=angular.module("App",[])
             .controller("MyController",($scope)=>{
-                //$scope.
+              $scope.model=[];
+                $scope.Save=(data)=>{
+                  let index=Math.random();
+                  let email= data.emailwithtime.slice(0,data.emailwithtime.search("view"));
+                  let rectime= data.emailwithtime.slice(data.emailwithtime.search("all")+3);
+                  let temp={
+                            ID:index,
+                            FirstName:data.FirstName, 
+                            LastName:data.LastName,
+                            EmpID:data.EmpID ,
+                            Caption:data.caption,
+                            EmailID:email.trim(),
+                            ReceiveTime:rectime.trim(),
+                            SentTime:data.senttime, 
+                            ReceivedMail:data.receivedemail,
+                            SentMail: data.sentmail
+                           };
+                  $scope.model=[temp,...$scope.model];
+                   Reset(data);
+                };
+              
+              let Reset=(data)=>{
+                 data.caption='';
+                 data.emailwithtime='';
+                 data.caption='';
+                 data.senttime='';
+                 data.receivedemail='';
+                 data.sentmail='';
+              };
+              
             });
     </script>
   </body>
