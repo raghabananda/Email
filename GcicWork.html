@@ -98,7 +98,11 @@
         <div class="col-md-12" ng-repeat="value in model">
           <div class="card" id="{{value.ID}}">
             <div class="card-header">
-              <h5>{{value.Caption}}</h5>
+              <div class="row">
+                <div class="col-md-6"> <h5>{{value.Caption}}</h5></div>
+                <div class="col-md-6"><button ng-click="Remove(value.ID)">&#9747;</button></div>
+              </div>
+             
             </div>
             <div class="card-body">
               <div class="row">
@@ -178,6 +182,10 @@
                  data.senttime='';
                  data.receivedemail='';
                  data.sentmail='';
+              };
+              
+              $scope.Remove=(ID)=>{                 
+                $scope.model=[...$scope.model(obj=>obj.ID!=ID)];
               };
               
             });
