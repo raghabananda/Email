@@ -185,7 +185,7 @@
               };
               
               $scope.Remove=(ID)=>{                 
-                $scope.model=[...$scope.model(obj=>obj.ID!=ID)];
+                $scope.model=[...$scope.model.filter(obj=>obj.ID!=ID)];
               };
               
             });
