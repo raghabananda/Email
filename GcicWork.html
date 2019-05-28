@@ -103,12 +103,13 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
+                  <br><br><br>
                   <input type="text" class="form-control" 
                          value="{{value.FirstName+' '+value.LastName+' '+value.EmpID+' '+'Online Support Team'}}">
                   <br><br><br>
                   <textarea class="form-control" rows="5">{{
                       'Email sent to customer.\n\n'+
-                      value.FirstName+'\n'+
+                      value.FirstName+' '+
                       value.LastName+'\n'+
                       value.EmpID+'\n'+
                       'Online Support Team'
